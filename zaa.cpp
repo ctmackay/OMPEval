@@ -141,5 +141,93 @@ int main()
     hand_val = eval.evaluate(h8);
     std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
 
+    // worst possible hand
+    c1 = char_to_hand_idx('7', 'D');
+    c2 = char_to_hand_idx('5', 'C');
+    c3 = char_to_hand_idx('4', 'H');
+    c4 = char_to_hand_idx('3', 'H');
+    c5 = char_to_hand_idx('2', 'S');
+
+    Hand h9 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h9);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // second worst possible hand
+    c1 = char_to_hand_idx('8', 'D');
+    c2 = char_to_hand_idx('5', 'C');
+    c3 = char_to_hand_idx('4', 'H');
+    c4 = char_to_hand_idx('3', 'H');
+    c5 = char_to_hand_idx('2', 'S');
+
+    Hand h10 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h10);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // pair
+    c1 = char_to_hand_idx('8', 'D');
+    c2 = char_to_hand_idx('8', 'C');
+    c3 = char_to_hand_idx('4', 'H');
+    c4 = char_to_hand_idx('3', 'H');
+    c5 = char_to_hand_idx('2', 'S');
+
+    Hand h11 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h11);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // two pair
+    c1 = char_to_hand_idx('8', 'D');
+    c2 = char_to_hand_idx('8', 'C');
+    c3 = char_to_hand_idx('4', 'H');
+    c4 = char_to_hand_idx('3', 'H');
+    c5 = char_to_hand_idx('4', 'S');
+
+    Hand h12 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h12);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // trips
+    c1 = char_to_hand_idx('8', 'D');
+    c2 = char_to_hand_idx('8', 'C');
+    c3 = char_to_hand_idx('8', 'H');
+    c4 = char_to_hand_idx('3', 'H');
+    c5 = char_to_hand_idx('4', 'S');
+
+    Hand h13 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h13);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // Ace high flush
+    c1 = char_to_hand_idx('8', 'H');
+    c2 = char_to_hand_idx('Q', 'H');
+    c3 = char_to_hand_idx('A', 'H');
+    c4 = char_to_hand_idx('6', 'H');
+    c5 = char_to_hand_idx('T', 'H');
+
+    Hand h14 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h14);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // King high flush
+    c1 = char_to_hand_idx('8', 'H');
+    c2 = char_to_hand_idx('Q', 'H');
+    c3 = char_to_hand_idx('K', 'H');
+    c4 = char_to_hand_idx('6', 'H');
+    c5 = char_to_hand_idx('T', 'H');
+
+    Hand h15 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h15);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
+    // Quads
+    c1 = char_to_hand_idx('Q', 'D');
+    c2 = char_to_hand_idx('Q', 'C');
+    c3 = char_to_hand_idx('Q', 'H');
+    c4 = char_to_hand_idx('Q', 'S');
+    c5 = char_to_hand_idx('T', 'H');
+
+    Hand h16 = Hand::empty() + Hand(c1) + Hand(c2) + Hand(c3) + Hand(c4) + Hand(c5);
+    hand_val = eval.evaluate(h16);
+    std::cout << hand_val << " " << hand_val_to_name(hand_val) << std::endl;
+
     return 0;
 }
