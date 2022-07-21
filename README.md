@@ -32,6 +32,8 @@ int main()
 }
 ```
 
+g++ -Iomp -std=c++11 .\omp\HandEvaluator.cpp  .\zaa.cpp -o eval.exe; ./eval.exe
+
 ## Equity Calculator
 - Supports Monte Carlo simulation and full enumeration.
 - Hand ranges can be defined using syntax similar to EquiLab.
